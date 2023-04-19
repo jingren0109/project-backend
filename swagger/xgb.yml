@@ -1,0 +1,62 @@
+openapi: 3.0.0
+
+info:
+  title: LendWise Loan Risk Prediction APIs
+  description: APIs for predicting the recovery rate of a loan based on various input parameters.
+  version: '0.1'
+
+host: localhost:5000
+schemes:
+  - http
+
+tags:
+  - name: Neural Network
+
+paths:
+  /api/predict/xgb:
+    get:
+      summary: Predict loan risk using a neural network model
+      operationId: predictLoanRisk
+      produces:
+        - application/json
+      parameters:
+        - name: loan_amnt
+          in: query
+          description: The requested loan amount
+          required: true
+          schema:
+            type: integer
+            format: int32
+
+responses:
+  '200':
+    description: Successful Response
+    schema:
+      type: object
+      properties:
+        value:
+          type: number
+          format: float
+          description: The predicted recovery rate of the loan
+        description:
+          type: string
+          description: A description of the prediction
+  '400':
+    description: Bad Request
+    schema:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message explaining the bad request
+  '500':
+    description: Internal Server Error
+    schema:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message explaining the internal server error
+
+
+
