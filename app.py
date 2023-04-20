@@ -133,7 +133,6 @@ def loan_risk_predict_xgb():
     return response
 
 @app.route("/api/predict/ensemble")
-@swag_from("./swagger/xgb.yml", methods=['GET'])
 def loan_risk_predict_ensemble():
     assert isinstance(request.args, ImmutableOrderedMultiDict)
 
