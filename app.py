@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask, Request, request
+from flask import Flask, Request, request, jsonify
 from werkzeug.datastructures import ImmutableOrderedMultiDict
 from predict import predict_nn, predict_xgb
 import pandas as pd
@@ -81,7 +81,12 @@ def loan_risk_predict_nn():
 
     description = f"This loan is predicted to recover {round(prediction * 100, 1)}% of its expected return."
 
-    return {"value": str(prediction), "description": description}
+    response = jsonify({"value": str(prediction), "description": description})
+
+    # Add the following line to allow any origin to access the resource
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    return response
 
 @app.route("/api/predict/xgb")
 @swag_from("./swagger/xgb.yml", methods=['GET'])
@@ -120,7 +125,12 @@ def loan_risk_predict_xgb():
 
     description = f"This loan is predicted to recover {round(prediction * 100, 1)}% of its expected return."
 
-    return {"value": str(prediction), "description": description}
+    response = jsonify({"value": str(prediction), "description": description})
+
+    # Add the following line to allow any origin to access the resource
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    return response
 
 @app.route("/api/predict/ensemble")
 @swag_from("./swagger/xgb.yml", methods=['GET'])
@@ -184,7 +194,12 @@ def loan_risk_predict_ensemble():
 
     description = f"This loan is predicted to recover {round(prediction * 100, 1)}% of its expected return."
 
-    return {"value": str(prediction), "description": description}
+    response = jsonify({"value": str(prediction), "description": description})
+
+    # Add the following line to allow any origin to access the resource
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    return response
 
 
 if __name__ == "__main__":
