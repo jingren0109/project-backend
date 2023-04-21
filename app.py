@@ -84,7 +84,7 @@ def loan_risk_predict_nn():
     response = jsonify({"value": str(prediction), "description": description})
 
     # Add the following line to allow any origin to access the resource
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Origin', 'https://project-lendwise.netlify.app')
 
     return response
 
@@ -128,7 +128,7 @@ def loan_risk_predict_xgb():
     response = jsonify({"value": str(prediction), "description": description})
 
     # Add the following line to allow any origin to access the resource
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Origin', 'https://project-lendwise.netlify.app')
 
     return response
 
@@ -210,7 +210,7 @@ def loan_risk_predict_ensemble():
     response = jsonify({"value": str(prediction), "description": description})
 
     # Add the following line to allow any origin to access the resource
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Origin', 'https://project-lendwise.netlify.app')
 
     return response
 
@@ -296,7 +296,7 @@ def loan_risk_predict():
                         "ensemble": {"value": str(prediction), "description": description}})
 
     # Add the following line to allow any origin to access the resource
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Origin', 'https://project-lendwise.netlify.app')
 
     return response
 
