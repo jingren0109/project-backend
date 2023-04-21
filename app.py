@@ -44,6 +44,16 @@ swagger = Swagger(app, template=swagger_template, config=swagger_config)
 
 logger = logging.getLogger(__name__)
 
+@app.route("/api/check")
+def liveness_check():
+    response = jsonify({"result": "OK"})
+
+    # Add the following line to allow any origin to access the resource
+    response.headers.add('Access-Control-Allow-Origin', 'https://project-lendwise.netlify.app')
+
+    return response
+
+
 @app.route("/api/predict/nn")
 @swag_from("./swagger/nn.yml", methods=['GET'])
 def loan_risk_predict_nn():
