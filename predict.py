@@ -30,7 +30,7 @@ def dataPrepare(data):
             for joint_val, indiv_val in zip(data[joint_col], data[indiv_col])
         ]
 
-def predict_nn(arguments, transformer, index, model):
+def predict_nn(arguments, transformer, index, model_link):
     try:
         data = pd.DataFrame(arguments, index=[0])
         dataPrepare(data)
@@ -38,7 +38,7 @@ def predict_nn(arguments, transformer, index, model):
         transformer = joblib.load(transformer)[index]
         X = transformer.transform(data)
 
-        model = load_model(model)
+        model = load_model(model_link)
 
         y_pred = model(X).numpy()[0][0]
 
@@ -67,6 +67,31 @@ def predict_xgb(arguments, transformer, index, model_link):
         y_pred = model.predict(xgb.DMatrix(X))[0]
         logging.info("The prediction result is: ")
         logging.info(y_pred)
+        return y_pred
+
+    except Exception as e:
+        logging.error(f"Error in prediction: {e}")
+        return np.nan
+
+def predict_loan_grade(arguments, transformer, index, model, type):
+    try:
+        data = pd.DataFrame(arguments, index=[0])
+        dataPrepare(data)
+
+        transformer = joblib.load(transformer)[index]
+        X = transformer.transform(data)
+
+        if type == "nn":
+            model = load_model(model)
+        else:
+            model = joblib.load(model)
+
+        if type == "nn":
+            prediction = model.predict(X)[0]
+            y_pred = np.argmax(prediction)
+        else:
+            y_pred = model.predict(X)
+
         return y_pred
 
     except Exception as e:
