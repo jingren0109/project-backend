@@ -402,8 +402,8 @@ def loan_risk_predict():
                         "suggestion": suggestion})
 
     # Add the following line to allow any origin to access the resource
-    response.headers.add('Access-Control-Allow-Origin', 'https://project-lendwise.netlify.app')
-    # response.headers.add('Access-Control-Allow-Origin', '*')
+    # response.headers.add('Access-Control-Allow-Origin', 'https://project-lendwise.netlify.app')
+    response.headers.add('Access-Control-Allow-Origin', '*')
 
     return response
 
@@ -497,7 +497,8 @@ def loan_risk_predict_grade():
     response = jsonify({"grade": grade_encoder[int(prediction)], "grade_encoded": str(int(prediction))})
 
     # Add the following line to allow any origin to access the resource
-    response.headers.add('Access-Control-Allow-Origin', 'https://project-lendwise.netlify.app')
+    # response.headers.add('Access-Control-Allow-Origin', 'https://project-lendwise.netlify.app')
+    response.headers.add('Access-Control-Allow-Origin', '*')
 
     return response
 
