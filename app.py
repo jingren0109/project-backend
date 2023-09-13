@@ -63,13 +63,13 @@ def loan_risk_predict_nn():
     assert isinstance(request.args, ImmutableOrderedMultiDict)
 
     nn_model_list = [
-        "./model/linear/nn_loan_risk_model_0",
-        "./model/linear/nn_loan_risk_model_1",
-        "./model/linear/nn_loan_risk_model_2",
-        "./model/linear/nn_loan_risk_model_3",
-        "./model/linear/nn_loan_risk_model_4",
+        "./model/linear/linear/nn_loan_risk_model_0",
+        "./model/linear/linear/nn_loan_risk_model_1",
+        "./model/linear/linear/nn_loan_risk_model_2",
+        "./model/linear/linear/nn_loan_risk_model_3",
+        "./model/linear/linear/nn_loan_risk_model_4",
     ]
-    data_transformer = "./model/linear/nn_data_transformer.joblib"
+    data_transformer = "./model/linear/linear/nn_data_transformer.joblib"
 
     # Make predictions using each model
     predictions = []
@@ -108,13 +108,13 @@ def loan_risk_predict_xgb():
     assert isinstance(request.args, ImmutableOrderedMultiDict)
 
     xgb_model_list = [
-        "./model/linear/xgb_loan_risk_model_0.json",
-        "./model/linear/xgb_loan_risk_model_1.json",
-        "./model/linear/xgb_loan_risk_model_2.json",
-        "./model/linear/xgb_loan_risk_model_3.json",
-        "./model/linear/xgb_loan_risk_model_4.json",
+        "./model/linear/linear/xgb_loan_risk_model_0.json",
+        "./model/linear/linear/xgb_loan_risk_model_1.json",
+        "./model/linear/linear/xgb_loan_risk_model_2.json",
+        "./model/linear/linear/xgb_loan_risk_model_3.json",
+        "./model/linear/linear/xgb_loan_risk_model_4.json",
     ]
-    data_transformer = "./model/linear/xgb_data_transformer.joblib"
+    data_transformer = "./model/linear/linear/xgb_data_transformer.joblib"
 
     # Make predictions using each model
     predictions = []
@@ -152,13 +152,13 @@ def loan_risk_predict_ensemble():
     assert isinstance(request.args, ImmutableOrderedMultiDict)
 
     nn_model_list = [
-        "./model/linear/nn_loan_risk_model_0",
-        "./model/linear/nn_loan_risk_model_1",
-        "./model/linear/nn_loan_risk_model_2",
-        "./model/linear/nn_loan_risk_model_3",
-        "./model/linear/nn_loan_risk_model_4",
+        "./model/linear/linear/nn_loan_risk_model_0",
+        "./model/linear/linear/nn_loan_risk_model_1",
+        "./model/linear/linear/nn_loan_risk_model_2",
+        "./model/linear/linear/nn_loan_risk_model_3",
+        "./model/linear/linear/nn_loan_risk_model_4",
     ]
-    nn_data_transformer = "./model/linear/nn_data_transformer.joblib"
+    nn_data_transformer = "./model/linear/linear/nn_data_transformer.joblib"
 
     # Make predictions using each model
     nn_predictions = []
@@ -177,13 +177,13 @@ def loan_risk_predict_ensemble():
         prediction_nn = 1
 
     xgb_model_list = [
-        "./model/linear/xgb_loan_risk_model_0.json",
-        "./model/linear/xgb_loan_risk_model_1.json",
-        "./model/linear/xgb_loan_risk_model_2.json",
-        "./model/linear/xgb_loan_risk_model_3.json",
-        "./model/linear/xgb_loan_risk_model_4.json",
+        "./model/linear/linear/xgb_loan_risk_model_0.json",
+        "./model/linear/linear/xgb_loan_risk_model_1.json",
+        "./model/linear/linear/xgb_loan_risk_model_2.json",
+        "./model/linear/linear/xgb_loan_risk_model_3.json",
+        "./model/linear/linear/xgb_loan_risk_model_4.json",
     ]
-    xgb_data_transformer = "./model/linear/xgb_data_transformer.joblib"
+    xgb_data_transformer = "./model/linear/linear/xgb_data_transformer.joblib"
 
     # Make predictions using each model
     xgb_predictions = []
@@ -235,13 +235,13 @@ def loan_risk_predict():
     assert isinstance(request.args, ImmutableOrderedMultiDict)
 
     nn_model_list = [
-        "./model/linear/nn_loan_risk_model_0",
-        "./model/linear/nn_loan_risk_model_1",
-        "./model/linear/nn_loan_risk_model_2",
-        "./model/linear/nn_loan_risk_model_3",
-        "./model/linear/nn_loan_risk_model_4",
+        "./model/linear/linear/nn_loan_risk_model_0",
+        "./model/linear/linear/nn_loan_risk_model_1",
+        "./model/linear/linear/nn_loan_risk_model_2",
+        "./model/linear/linear/nn_loan_risk_model_3",
+        "./model/linear/linear/nn_loan_risk_model_4",
     ]
-    nn_data_transformer = "./model/linear/nn_data_transformer.joblib"
+    nn_data_transformer = "./model/linear/linear/nn_data_transformer.joblib"
 
     # Make predictions using each model
     nn_predictions = []
@@ -260,13 +260,13 @@ def loan_risk_predict():
         prediction_nn = 1
 
     xgb_model_list = [
-        "./model/linear/xgb_loan_risk_model_0.json",
-        "./model/linear/xgb_loan_risk_model_1.json",
-        "./model/linear/xgb_loan_risk_model_2.json",
-        "./model/linear/xgb_loan_risk_model_3.json",
-        "./model/linear/xgb_loan_risk_model_4.json",
+        "./model/linear/linear/xgb_loan_risk_model_0.json",
+        "./model/linear/linear/xgb_loan_risk_model_1.json",
+        "./model/linear/linear/xgb_loan_risk_model_2.json",
+        "./model/linear/linear/xgb_loan_risk_model_3.json",
+        "./model/linear/linear/xgb_loan_risk_model_4.json",
     ]
-    xgb_data_transformer = "./model/linear/xgb_data_transformer.joblib"
+    xgb_data_transformer = "./model/linear/linear/xgb_data_transformer.joblib"
 
     # Make predictions using each model
     xgb_predictions = []
