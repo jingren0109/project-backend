@@ -308,13 +308,13 @@ def loan_risk_predict():
     description = f"This loan is predicted to recover {round(ensemble_prediction * 100, 4)}% of its expected return."
 
     nn_model_list = [
-        "./model/classification/nn_loan_grade_model_0",
-        "./model/classification/nn_loan_grade_model_1",
-        "./model/classification/nn_loan_grade_model_2",
-        "./model/classification/nn_loan_grade_model_3",
-        "./model/classification/nn_loan_grade_model_4",
+        "./model/classification/classification/nn_loan_grade_model_0",
+        "./model/classification/classification/nn_loan_grade_model_1",
+        "./model/classification/classification/nn_loan_grade_model_2",
+        "./model/classification/classification/nn_loan_grade_model_3",
+        "./model/classification/classification/nn_loan_grade_model_4",
     ]
-    nn_data_transformer = "./model/classification/nn_classification_transformer.joblib"
+    nn_data_transformer = "./model/classification/classification/nn_classification_transformer.joblib"
 
     # Make predictions using each model
     nn_predictions = []
@@ -325,13 +325,13 @@ def loan_risk_predict():
     print(nn_predictions)
 
     rf_model_list = [
-        "./model/classification/rf_loan_grade_risk_model_0.joblib",
-        "./model/classification/rf_loan_grade_risk_model_1.joblib",
-        "./model/classification/rf_loan_grade_risk_model_2.joblib",
-        "./model/classification/rf_loan_grade_risk_model_3.joblib",
-        "./model/classification/rf_loan_grade_risk_model_4.joblib",
+        "./model/classification/classification/rf_loan_grade_risk_model_0.joblib",
+        "./model/classification/classification/rf_loan_grade_risk_model_1.joblib",
+        "./model/classification/classification/rf_loan_grade_risk_model_2.joblib",
+        "./model/classification/classification/rf_loan_grade_risk_model_3.joblib",
+        "./model/classification/classification/rf_loan_grade_risk_model_4.joblib",
     ]
-    rf_data_transformer = "./model/classification/rf_classification_transformer.joblib"
+    rf_data_transformer = "./model/classification/classification/rf_classification_transformer.joblib"
 
     # Make predictions using each model
     rf_predictions = []
@@ -342,13 +342,13 @@ def loan_risk_predict():
     print(rf_predictions)
 
     svm_model_list = [
-        "./model/classification/svm_loan_grade_risk_model_0.joblib",
-        "./model/classification/svm_loan_grade_risk_model_1.joblib",
-        "./model/classification/svm_loan_grade_risk_model_2.joblib",
-        "./model/classification/svm_loan_grade_risk_model_3.joblib",
-        "./model/classification/svm_loan_grade_risk_model_4.joblib",
+        "./model/classification/classification/svm_loan_grade_risk_model_0.joblib",
+        "./model/classification/classification/svm_loan_grade_risk_model_1.joblib",
+        "./model/classification/classification/svm_loan_grade_risk_model_2.joblib",
+        "./model/classification/classification/svm_loan_grade_risk_model_3.joblib",
+        "./model/classification/classification/svm_loan_grade_risk_model_4.joblib",
     ]
-    svm_data_transformer = "./model/classification/svm_classification_transformer.joblib"
+    svm_data_transformer = "./model/classification/classification/svm_classification_transformer.joblib"
 
     # Make predictions using each model
     svm_predictions = []
@@ -420,13 +420,13 @@ def loan_risk_predict_grade():
         return {"error": "Missing one or more required parameters."}, 400
 
     nn_model_list = [
-        "./model/classification/nn_loan_grade_model_0",
-        "./model/classification/nn_loan_grade_model_1",
-        "./model/classification/nn_loan_grade_model_2",
-        "./model/classification/nn_loan_grade_model_3",
-        "./model/classification/nn_loan_grade_model_4",
+        "./model/classification/classification/nn_loan_grade_model_0",
+        "./model/classification/classification/nn_loan_grade_model_1",
+        "./model/classification/classification/nn_loan_grade_model_2",
+        "./model/classification/classification/nn_loan_grade_model_3",
+        "./model/classification/classification/nn_loan_grade_model_4",
     ]
-    nn_data_transformer = "./model/classification/nn_classification_transformer.joblib"
+    nn_data_transformer = "./model/classification/classification/nn_classification_transformer.joblib"
 
     # Make predictions using each model
     nn_predictions = []
@@ -437,13 +437,13 @@ def loan_risk_predict_grade():
     print(nn_predictions)
 
     rf_model_list = [
-        "./model/classification/rf_loan_grade_risk_model_0.joblib",
-        "./model/classification/rf_loan_grade_risk_model_1.joblib",
-        "./model/classification/rf_loan_grade_risk_model_2.joblib",
-        "./model/classification/rf_loan_grade_risk_model_3.joblib",
-        "./model/classification/rf_loan_grade_risk_model_4.joblib",
+        "./model/classification/classification/rf_loan_grade_risk_model_0.joblib",
+        "./model/classification/classification/rf_loan_grade_risk_model_1.joblib",
+        "./model/classification/classification/rf_loan_grade_risk_model_2.joblib",
+        "./model/classification/classification/rf_loan_grade_risk_model_3.joblib",
+        "./model/classification/classification/rf_loan_grade_risk_model_4.joblib",
     ]
-    rf_data_transformer = "./model/classification/rf_classification_transformer.joblib"
+    rf_data_transformer = "./model/classification/classification/rf_classification_transformer.joblib"
 
     # Make predictions using each model
     rf_predictions = []
@@ -454,13 +454,13 @@ def loan_risk_predict_grade():
     print(rf_predictions)
 
     svm_model_list = [
-        "./model/classification/svm_loan_grade_risk_model_0.joblib",
-        "./model/classification/svm_loan_grade_risk_model_1.joblib",
-        "./model/classification/svm_loan_grade_risk_model_2.joblib",
-        "./model/classification/svm_loan_grade_risk_model_3.joblib",
-        "./model/classification/svm_loan_grade_risk_model_4.joblib",
+        "./model/classification/classification/svm_loan_grade_risk_model_0.joblib",
+        "./model/classification/classification/svm_loan_grade_risk_model_1.joblib",
+        "./model/classification/classification/svm_loan_grade_risk_model_2.joblib",
+        "./model/classification/classification/svm_loan_grade_risk_model_3.joblib",
+        "./model/classification/classification/svm_loan_grade_risk_model_4.joblib",
     ]
-    svm_data_transformer = "./model/classification/svm_classification_transformer.joblib"
+    svm_data_transformer = "./model/classification/classification/svm_classification_transformer.joblib"
 
     # Make predictions using each model
     svm_predictions = []
